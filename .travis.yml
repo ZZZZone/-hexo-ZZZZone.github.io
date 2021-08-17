@@ -8,6 +8,8 @@ branches:
     - master # build master branch only
 script:
   - hexo generate # generate static files
+  - cat public/index.html
+  - [[ ! - s public/index.html ]] ｜｜ echo "file is empty"
 deploy:
   provider: pages
   skip-cleanup: true
